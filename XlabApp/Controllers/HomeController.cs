@@ -24,7 +24,7 @@ namespace XlabApp.Controllers
             List<Leedsbeerquest> lbqlist = new List<Leedsbeerquest>();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:44398/xlabapi"))
+                using (var response = await httpClient.GetAsync("https://xlabapitest.azurewebsites.net/xlabapi"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     lbqlist = JsonConvert.DeserializeObject<List<Leedsbeerquest>>(apiResponse);
